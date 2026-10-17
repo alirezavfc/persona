@@ -6,12 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "format": "prettier --write \"app/**/*.{ts,tsx,css}\" \"components/**/*.{ts,tsx}\" \"lib/**/*.{ts,tsx}\" package.json",
+    "format:check": "prettier --check \"app/**/*.{ts,tsx,css}\" \"components/**/*.{ts,tsx}\" \"lib/**/*.{ts,tsx}\" package.json"
   },
   "dependencies": {
     "next": "16.4.2",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "react-hook-form": "^7.62.0"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
@@ -20,6 +23,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.2",
+    "prettier": "^3.9.10",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
