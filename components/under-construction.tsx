@@ -11,7 +11,7 @@ export function UnderConstruction({
     <div className="placeholder-wrap">
       <section className="placeholder-card">
         <div className="placeholder-icon">
-          <Icon name="spark" />
+          <Icon name="persona" />
         </div>
         <p className="eyebrow">A NOTE FROM PERSONA</p>
         <h1>{title}</h1>

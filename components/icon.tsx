@@ -9,7 +9,8 @@ export type IconName =
   | "heart"
   | "reply"
   | "arrow"
-  | "spark";
+  | "spark"
+  | "persona";
 
 export function Icon({
   name,
@@ -61,6 +62,13 @@ export function Icon({
       <>
         <path d="m12 3 1.7 5.3L19 10l-5.3 1.7L12 17l-1.7-5.3L5 10l5.3-1.7L12 3Z" />
         <path d="m19 16 .8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16Z" />
+      </>
+    ),
+    persona: (
+      <>
+        <path d="M20 11.5a8 8 0 0 1-8 8H6l-3 2v-10a8 8 0 1 1 17 0Z" />
+        <path d="M9 8.5v11" />
+        <path d="M9 9h3a3 3 0 0 1 0 6H9" />
       </>
     ),
   };

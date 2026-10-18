@@ -10,6 +10,12 @@ Persona is intended to remain simple for users while having a solid and extensib
 
 ---
 
+## 🌐 Live Demo
+
+https://alirezavfc.github.io/persona/
+
+---
+
 ## 🎯 Project Goals
 
 Persona is designed to explore and implement:

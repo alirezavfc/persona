@@ -13,18 +13,21 @@ export default function IntroductionPage() {
       </div>
       <section className="intro-content">
         <div className="intro-symbol">
-          <Icon name="spark" />
+          <Icon name="persona" />
         </div>
-        <p className="eyebrow">A SMALL BEGINNING</p>
+        <p className="eyebrow">یه شروع کوچک</p>
         <h1>
-          A space to learn
-          <br />
-          and grow into.
+          محلی برای یادگیری
+          <br />و پیشرفت
         </h1>
-        <p className="intro-copy">
-          Persona is an educational project for learning Next.js, developed with
-          AI assistance. It’s a small first step, made to change and evolve over
-          time.
+        <p className="intro-copy" dir="rtl">
+          پرسونا یک پروژه‌ی شخصی و آموزشی برای یادگیری و تمرین توسعه‌ی نرم‌افزار
+          هست. هدفم اینه که در طول توسعه‌ی این پروژه، مباحث مختلفی از
+          برنامه‌نویسی فرانت‌اند و بک‌اند گرفته تا امنیت و شبکه رو به‌صورت عملی
+          یاد بگیرم. در حال حاضر تمرکزم روی یادگیری Next.js و توسعه‌ی فرانت‌اند
+          است. برای طراحی رابط کاربری این نسخه نیز از ابزارهای هوش مصنوعی کمک
+          گرفته‌ام. این پروژه به‌مرور توسعه پیدا می‌کنه و قابلیت‌های جدیدی بهش
+          اضافه می‌شه.
         </p>
         <Link href="/home" className="intro-cta">
           Explore Persona <Icon name="arrow" />
