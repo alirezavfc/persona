@@ -1,6 +1,5 @@
 export type PersonaUser = {
   id: string;
-  name: string;
   bio: string;
   followers: number;
   following: number;

@@ -10,10 +10,7 @@ export function PostCard({ post }: { post: PersonaPost }) {
   return (
     <article className="post-card">
       <div className="avatar" aria-hidden="true">
-        {author.name
-          .split(" ")
-          .map((part) => part[0])
-          .join("")}
+        P
       </div>
       <div className="post-content">
         <div className="post-meta">

@@ -29,10 +29,7 @@ export default async function ProfilePage({
         </div>
       </AppShell>
     );
-  const initials = user.name
-    .split(" ")
-    .map((part) => part[0])
-    .join("");
+  const initials = `P${user.id}`;
   return (
     <AppShell>
       <div className="feed-column">
@@ -45,7 +42,6 @@ export default async function ProfilePage({
           <div className="profile-info">
             <p className="eyebrow">PERSONA PROFILE</p>
             <h1>{user.id}</h1>
-            <p className="profile-display-name">{user.name}</p>
             <p className="profile-bio">{user.bio}</p>
             <div className="profile-stats">
               <span>
