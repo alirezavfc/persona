@@ -2,8 +2,13 @@ import Link from "next/link";
 import { AppShell } from "@/components/navigation";
 import { PostCard } from "@/components/post-card";
 import { Icon } from "@/components/icon";
-import { findUser, posts } from "@/lib/mock-data";
-export const instant = false;
+import { findUser, posts, users } from "@/lib/mock-data";
+
+export function generateStaticParams() {
+  return users.map((user) => ({
+    id: user.id,
+  }));
+}
 
 export default async function ProfilePage({
   params,

@@ -2,8 +2,13 @@ import Link from "next/link";
 import { AppShell } from "@/components/navigation";
 import { PostCard } from "@/components/post-card";
 import { Icon } from "@/components/icon";
-import { findPost, findUser, repliesFor } from "@/lib/mock-data";
-export const instant = false;
+import { findPost, findUser, posts, repliesFor } from "@/lib/mock-data";
+
+export function generateStaticParams() {
+  return posts.map((post) => ({
+    id: post.id,
+  }));
+}
 
 export default async function PostPage({ params }: PageProps<"/post/[id]">) {
   const { id } = await params;
