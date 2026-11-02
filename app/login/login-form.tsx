@@ -19,11 +19,11 @@ export function LoginForm() {
   };
 
   return (
-    <form className="grid gap-[18px]" onSubmit={handleSubmit(onSubmit)} noValidate>
-      <div className="grid gap-2">
-        <label className="text-xs font-semibold text-[#424849]" htmlFor="personaId">Persona ID</label>
+    <form className="grid gap-4" onSubmit={handleSubmit(onSubmit)} noValidate>
+      <div className="grid gap-1">
+        <label className="text-sm" htmlFor="personaId">Persona ID</label>
         <input
-          className="h-[45px] w-full rounded-[9px] border border-[#e4e7e3] bg-[#fdfdfc] px-[13px] text-[13px] text-ink placeholder:text-[#b0b5b2] transition-[border-color,box-shadow] focus:border-[#7c9e94] focus:outline-none focus:shadow-[0_0_0_3px_#426d6514] aria-[invalid=true]:border-[#bc7470]"
+          className="rounded border border-line bg-white px-3 py-2 text-sm"
           id="personaId"
           autoComplete="username"
           placeholder="e.g. Persona22"
@@ -32,15 +32,15 @@ export function LoginForm() {
           {...register("personaId", { required: "Enter your Persona ID." })}
         />
         {errors.personaId && (
-          <p className="m-0 text-xs text-red" id="persona-id-error">
+          <p className="text-sm text-red-700" id="persona-id-error">
             {errors.personaId.message}
           </p>
         )}
       </div>
-      <div className="grid gap-2">
-        <label className="text-xs font-semibold text-[#424849]" htmlFor="password">Password</label>
+      <div className="grid gap-1">
+        <label className="text-sm" htmlFor="password">Password</label>
         <input
-          className="h-[45px] w-full rounded-[9px] border border-[#e4e7e3] bg-[#fdfdfc] px-[13px] text-[13px] text-ink placeholder:text-[#b0b5b2] transition-[border-color,box-shadow] focus:border-[#7c9e94] focus:outline-none focus:shadow-[0_0_0_3px_#426d6514] aria-[invalid=true]:border-[#bc7470]"
+          className="rounded border border-line bg-white px-3 py-2 text-sm"
           id="password"
           type="password"
           autoComplete="current-password"
@@ -50,21 +50,28 @@ export function LoginForm() {
           {...register("password", { required: "Enter your password." })}
         />
         {errors.password && (
-          <p className="m-0 text-xs text-red" id="password-error">
+          <p className="text-sm text-red-700" id="password-error">
             {errors.password.message}
           </p>
         )}
       </div>
-      <button className="mt-[3px] flex h-[46px] cursor-pointer items-center justify-between rounded-[9px] border-0 bg-accent px-[15px] text-[13px] font-semibold text-white transition-colors hover:bg-accent-dark disabled:cursor-wait disabled:opacity-70" type="submit" disabled={isSubmitting}>
+      <button
+        className="
+          flex items-center justify-between rounded bg-accent px-4 py-2 text-sm text-white
+          hover:bg-accent/90 disabled:cursor-wait disabled:opacity-70
+        "
+        type="submit"
+        disabled={isSubmitting}
+      >
         {isSubmitting ? "Please wait…" : "Continue"}
-        <span className="text-[17px]" aria-hidden="true">→</span>
+        <span aria-hidden="true">→</span>
       </button>
       {notice && (
-        <p className="m-0 text-center text-[11px] leading-[1.5] text-accent" role="status">
+        <p className="text-center text-sm text-accent" role="status">
           {notice}
         </p>
       )}
-      <p className="m-0 text-center text-[11px] leading-[1.5] text-[#909692]">
+      <p className="text-center text-sm text-stone-600">
         New to Persona? Registration isn’t available yet.
       </p>
     </form>

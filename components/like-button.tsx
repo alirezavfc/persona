@@ -10,10 +10,13 @@ export function LikeButton({ count }: { count: number }) {
       type="button"
       aria-label={liked ? "Unlike post" : "Like post"}
       aria-pressed={liked}
-      className={`inline-flex cursor-pointer items-center gap-[7px] border-0 bg-transparent px-0 py-0.5 text-xs text-[#929795] hover:text-accent ${liked ? "text-red-muted" : ""}`}
+      className={`inline-flex items-center gap-1 hover:text-accent ${liked ? "text-red-600" : "text-stone-600"}`}
       onClick={() => setLiked((value) => !value)}
     >
-      <Icon name="heart" className={`size-[17px] ${liked ? "fill-[#b4616122]" : ""}`} />
+      <Icon
+        name="heart"
+        className={`size-4 ${liked ? "fill-red-100" : ""}`}
+      />
       <span>{count + Number(liked)}</span>
     </button>
   );

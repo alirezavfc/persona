@@ -5,30 +5,17 @@
 }
 
 @theme inline {
-  --color-ink: #202326;
-  --color-canvas: #f8f8f6;
-  --color-line: #e9e9e6;
+  --color-canvas: #fafaf9;
+  --color-ink: #292d2d;
   --color-accent: #426d65;
-  --color-accent-dark: #345c53;
-  --color-accent-soft: #eaf1ee;
-  --color-accent-text: #355b53;
-  --color-accent-muted: #506c64;
-  --color-text-soft: #34393a;
-  --color-text-mid: #454b4b;
-  --color-text-subtle: #666d70;
-  --color-green-border: #dce7e2;
-  --color-green-border-dark: #d9e5df;
-  --color-green-pale: #f5f8f5;
-  --color-green-light: #e6efea;
-  --color-red: #a64f4b;
-  --color-red-muted: #b46161;
-  --color-gold: #d4a66d;
+  --color-line: #e5e7e4;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-serif: Georgia, "Times New Roman", serif;
 }
 
+a:focus-visible,
 button:focus-visible,
-a:focus-visible {
-  outline: 3px solid #84aaa0;
-  outline-offset: 3px;
+input:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
