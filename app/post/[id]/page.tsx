@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { AppShell } from "@/components/navigation";
 import { PostCard } from "@/components/post-card";
 import { findPost, posts, repliesFor } from "@/lib/mock-data";
 
@@ -14,7 +13,7 @@ export default async function PostPage({ params }: PageProps<"/post/[id]">) {
   const post = findPost(id);
   if (!post)
     return (
-      <AppShell>
+      <>
         <Link href="/home" className="text-sm text-accent hover:underline">
           Back to feed
         </Link>
@@ -27,11 +26,11 @@ export default async function PostPage({ params }: PageProps<"/post/[id]">) {
             Return to the feed
           </Link>
         </section>
-      </AppShell>
+      </>
     );
   const replies = repliesFor(post);
   return (
-    <AppShell>
+    <>
       <Link href="/home" className="text-sm text-accent hover:underline">
         Back to feed
       </Link>
@@ -60,6 +59,6 @@ export default async function PostPage({ params }: PageProps<"/post/[id]">) {
           </p>
         )}
       </section>
-    </AppShell>
+    </>
   );
 }
