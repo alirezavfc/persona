@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
+import Link from "next/link";
 
 type LoginValues = { personaId: string; password: string };
 
@@ -21,7 +22,9 @@ export function LoginForm() {
   return (
     <form className="grid gap-4" onSubmit={handleSubmit(onSubmit)} noValidate>
       <div className="grid gap-1">
-        <label className="text-sm" htmlFor="personaId">Persona ID</label>
+        <label className="text-sm" htmlFor="personaId">
+          Persona ID
+        </label>
         <input
           className="rounded border border-line bg-white px-3 py-2 text-sm"
           id="personaId"
@@ -38,7 +41,9 @@ export function LoginForm() {
         )}
       </div>
       <div className="grid gap-1">
-        <label className="text-sm" htmlFor="password">Password</label>
+        <label className="text-sm" htmlFor="password">
+          Password
+        </label>
         <input
           className="rounded border border-line bg-white px-3 py-2 text-sm"
           id="password"
@@ -71,8 +76,11 @@ export function LoginForm() {
           {notice}
         </p>
       )}
-      <p className="text-center text-sm text-stone-600">
-        New to Persona? Registration isn’t available yet.
+      <p className="mx-auto w-full max-w-sm text-center text-sm text-stone-500">
+        New to Persona?{" "}
+        <Link href="/signup" className="text-stone-900 hover:underline">
+          Sign up
+        </Link>
       </p>
     </form>
   );
