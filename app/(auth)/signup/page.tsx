@@ -13,13 +13,6 @@ export default function SignupPage() {
 
       <section className="mx-auto my-auto w-full max-w-sm py-12">
         <p className="mb-2 text-sm text-stone-600">Join Persona</p>
-
-        <h1 className="mb-2 font-serif text-3xl">Create your account.</h1>
-
-        <p className="mb-6 text-sm text-stone-600">
-          No email or phone number required. Just choose a password.
-        </p>
-
         <SignupForm />
       </section>
 
