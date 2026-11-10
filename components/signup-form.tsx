@@ -27,7 +27,7 @@ export default function SignupForm() {
     formState: { errors, isSubmitting },
   } = useForm<PasswordValues>({
     resolver: zodResolver(passwordSchema),
-    criteriaMode: "all",
+    criteriaMode: "all", // criteriaMode: "all" به React Hook Form می‌گه تمام خطاهای اعتبارسنجی یک فیلد رو نگه داره، نه فقط اولین خطا رو.
   });
 
   // شبیه‌سازی ثبت‌نام موفق

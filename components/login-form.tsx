@@ -4,8 +4,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import Link from "next/link";
-
-type LoginValues = { personaId: string; password: string };
+import { loginSchema, type LoginValues } from "@/lib/schemas/login-schema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export function LoginForm() {
   const [notice, setNotice] = useState("");
@@ -13,7 +13,9 @@ export function LoginForm() {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<LoginValues>();
+  } = useForm<LoginValues>({
+    resolver: zodResolver(loginSchema),
+  });
   const onSubmit: SubmitHandler<LoginValues> = async () => {
     // Deliberately isolated: this UI demo never sends, stores, or logs credentials.
     setNotice("This demo doesn’t sign you in yet.");
@@ -32,7 +34,7 @@ export function LoginForm() {
           placeholder="e.g. Persona22"
           aria-invalid={Boolean(errors.personaId)}
           aria-describedby={errors.personaId ? "persona-id-error" : undefined}
-          {...register("personaId", { required: "Enter your Persona ID." })}
+          {...register("personaId")}
         />
         {errors.personaId && (
           <p className="text-sm text-red-700" id="persona-id-error">
@@ -52,7 +54,7 @@ export function LoginForm() {
           placeholder="Your password"
           aria-invalid={Boolean(errors.password)}
           aria-describedby={errors.password ? "password-error" : undefined}
-          {...register("password", { required: "Enter your password." })}
+          {...register("password")}
         />
         {errors.password && (
           <p className="text-sm text-red-700" id="password-error">
