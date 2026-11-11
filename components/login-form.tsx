@@ -6,6 +6,7 @@ import type { SubmitHandler } from "react-hook-form";
 import Link from "next/link";
 import { loginSchema, type LoginValues } from "@/lib/schemas/login-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import SubmitButton from "./SubmitButton";
 
 export function LoginForm() {
   const [notice, setNotice] = useState("");
@@ -62,17 +63,7 @@ export function LoginForm() {
           </p>
         )}
       </div>
-      <button
-        className="
-          flex items-center justify-between rounded bg-accent px-4 py-2 text-sm text-white
-          hover:bg-accent/90 disabled:cursor-wait disabled:opacity-70
-        "
-        type="submit"
-        disabled={isSubmitting}
-      >
-        {isSubmitting ? "Please wait…" : "Continue"}
-        <span aria-hidden="true">→</span>
-      </button>
+      <SubmitButton isSubmitting={isSubmitting}>Continue</SubmitButton>
       {notice && (
         <p className="text-center text-sm text-accent" role="status">
           {notice}
