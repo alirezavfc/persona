@@ -1,19 +1,10 @@
-import { PostCard } from "@/components/post-card";
-import { posts } from "@/lib/mock-data";
+import { UnderConstruction } from "@/components/under-construction";
 
 export default function FeedPage() {
   return (
-    <>
-      <header className="mb-4 border-b border-line pb-4">
-        <h1 className="font-serif text-3xl">Your feed</h1>
-      </header>
-      <div className="divide-y divide-line">
-        {posts
-          .filter((post) => !post.replyTo)
-          .map((post) => (
-            <PostCard key={post.id} post={post} linkToPost />
-          ))}
-      </div>
-    </>
+    <UnderConstruction
+      title="A little quiet for now."
+      description="Feed are still being designed. When they arrive, they’ll help you stay close to the what your friends talk about."
+    />
   );
 }
